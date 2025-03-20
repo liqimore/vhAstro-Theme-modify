@@ -1,13 +1,14 @@
 import fs from 'fs/promises';
 import path from 'path';
 import * as cheerio from 'cheerio';
+import { fmtTime } from '.';
 
 export default async (posts: any[]) => {
   const searchIndex = posts.map(i => {
     const $ = cheerio.load(`<body>${i.rendered.html}</body>`);
     return {
       title: i.data.title,
-      url: `/article/${i.data.id}`,
+      url: fmtTime(i.data.date, "YYYY") + `//${i.data.id}`,
       content: `${i.data.title} - ` + $('body').text().replace(/\n/g, '').replace(/<[^>]+>/g, '')
     };
   });

@@ -4,7 +4,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import { render } from "astro:content";
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
-	return posts.map((post: any) => ({ params: { article: post.data.id }, props: post }));
+	return posts.map((post: any) => ({ params: { article: fmtTime(post.data.date, "YYYY") + "/" + post.data.id }, props: post }));
 }
 // 处理文章内容
 type Props = CollectionEntry<"blog">;
@@ -59,14 +59,14 @@ import "@/styles/ArticleBase.less";
 			<main>
 				<Content />
 				<nav class="tag-list">
-					{post.data.tags.map((i: any) => <a href={`/tag/${i}`}>{i}</a>)}
+					{post.data.tags.map((i: any) => <a href={`/${i}`}>{i}</a>)}
 				</nav>
 			</main>
 			<footer>
 				<!-- 打赏组件 -->
 				<Reward />
 				<!-- 版权©️信息 -->
-				<Copyright site={Site} id={post.data.id} title={post.data.title} sitename={Title} time={fmtTime(post.data.date, "YYYY-MM-DD A")} auther={Author} />
+				<Copyright site={Site} id={post.data.id} title={post.data.title} sitename={Title} time={fmtTime(post.data.date, "YYYY-MM-DD A")} auther={Author} date={post.data.date} />
 				<!-- 底部谷歌广告 -->
 				{GoogleAds.ad_Client && GoogleAds.articleAD_Slot && <GoogleAd className="vh-article-ad" slotID={GoogleAds.articleAD_Slot} />}
 			</footer>

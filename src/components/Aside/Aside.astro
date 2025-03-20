@@ -76,7 +76,7 @@ import "./Aside.less";
 					<h3>推荐文章</h3>
 					<div class="vh-aside-articles">
 						{recommendArticles.map(async i => (
-							<a href={`/article/${(await i).id}`}>
+							<a href={`/` + fmtTime((await i).date, "YYYY") + `/${(await i).id}`}>
 								<p class="cover">
 									<Image src="/assets/images/lazy-loading.webp" data-vh-lz-src={(await i).cover} alt={(await i).title} width="1" height="1" />
 								</p>

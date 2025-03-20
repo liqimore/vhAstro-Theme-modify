@@ -1,6 +1,7 @@
 ---
-const { time, sitename, title, site, id, auther } = Astro.props;
-const articleURL = `${site}/article/${id}`;
+const { time, sitename, title, site, id, auther, date} = Astro.props;
+const articleURL = `${site}/` + fmtTime(date, "YYYY") + `/${id}`;
+import { fmtTime } from "@/utils";
 import "./Copyright.less";
 ---
 

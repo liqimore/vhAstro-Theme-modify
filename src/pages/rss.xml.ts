@@ -1,6 +1,6 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { getDescription } from '@/utils/index'
+import { fmtTime, getDescription } from '@/utils/index'
 import SITE_CONFIG from '@/config';
 const { Title, Description } = SITE_CONFIG;
 
@@ -15,7 +15,7 @@ export async function GET(context: any) {
 			title: post.data.title,
 			pubDate: post.data.updated || post.data.date,
 			description: getDescription(post),
-			link: `/article/${post.data.id}`
+			link: fmtTime(post.data.date, "YYYY") + `/${post.data.id}`
 		})).sort((a: any, b: any) => (new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())),
 	});
 }
