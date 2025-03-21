@@ -43,7 +43,7 @@ top: true
 - [x] 语法高亮
 - [x] 图片懒加载
 - [x] 图片灯箱
-- [x] 支持 LivePhoto
+- [x] LivePhoto
 - [x] LaTex数学公式
 - [x] 赞赏功能
 - [x] Twikoo 评论
@@ -193,6 +193,45 @@ export default {
     }
   ]
 }
+```
+
+## 🌈 项目结构
+
+```t
+.
+├── public              => 静态资源
+├── script              => 命令
+├── src
+│   ├── components      => 组件
+│   ├── content
+│   │   └── blog        => 博客文章数据
+│   ├── layouts         => Layout 布局
+│   ├── page_data       => 页面数据
+│   ├── pages
+│   │   ├── about                        => 关于页面
+│   │   ├── archives                     => 归档页面
+│   │   ├── article                      => 文章页面
+│   │   ├── categories                   => 分类页面
+│   │   ├── friends                      => 圈子页面
+│   │   ├── links                        => 友链页面
+│   │   ├── message                      => 留言页面
+│   │   ├── tag                          => 标签页面
+│   │   ├── talking                      => 动态页面
+│   │   ├── [...page].astro              => 首页分页
+│   │   ├── 404.astro                    => 404页面
+│   │   ├── robots.txt.ts                => 爬虫文件
+│   │   └── rss.xml.ts                   => RSS文件
+│   ├── plugins             => 插件
+│   ├── scripts             => 脚本
+│   ├── styles              => 样式
+│   ├── type                => 类型
+│   ├── utils               => 工具
+│   ├── content.config.ts   => 内容配置
+│   ├── config.ts           => 配置
+├── tsconfig.json       => Typescript 配置
+├── astro.config.mjs    => Astro 配置
+├── package.json        => 依赖管理
+└── pnpm-lock.yaml      => 依赖锁定文件
 ```
 
 ## 🌈 组件
