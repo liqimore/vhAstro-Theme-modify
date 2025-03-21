@@ -59,7 +59,7 @@ import "@/styles/ArticleBase.less";
 			<main>
 				<Content />
 				<nav class="tag-list">
-					{post.data.tags.map((i: any) => <a href={`/${i}`}>{i}</a>)}
+					{post.data.tags.map((i: any) => <a href={`/tag/${i}`}>{i}</a>)}
 				</nav>
 			</main>
 			<footer>
