@@ -20,7 +20,7 @@ import "./Header.less";
 				Navs.map(i => (
 					<a class={i.link.replace("/", "")} href={i.link} target={i.target ? "_blank" : "_self"}>
 						{i.text}
-						<Image src={i.icon} alt={i.text} width="10" height="10" />
+						<Image src={i.icon} alt={`${i.text}图标`} width="10" height="10" />
 					</a>
 				))
 			}

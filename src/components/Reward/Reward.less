@@ -40,6 +40,32 @@
       transition: opacity 0.16s, transform 0.16s;
       user-select: none;
 
+      &:hover {
+        transform: translateY(-0.12rem);
+
+        &::before {
+          pointer-events: auto;
+        }
+
+        &>i {
+          pointer-events: auto;
+          opacity: 1;
+          transform: translate(-50%, -1rem);
+        }
+      }
+
+      &::before {
+        pointer-events: none;
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 100%;
+        width: calc(100vw - 1rem);
+        max-width: 258px;
+        height: 100%;
+      }
+
       &>i {
         opacity: 0;
         pointer-events: none;
@@ -47,8 +73,8 @@
         left: 50%;
         bottom: 100%;
         transform: translate(-50%, 0);
-        width: 258px;
-        max-width: calc(100vw - 1rem);
+        width: calc(100vw - 1rem);
+        max-width: 258px;
         border-radius: 0.588rem;
         aspect-ratio: 6/8;
         background-size: cover;
@@ -58,14 +84,6 @@
         transition: opacity 0.16s, transform 0.16s;
       }
 
-      &:hover {
-        transform: translateY(-0.12rem);
-
-        &>i {
-          opacity: 1;
-          transform: translate(-50%, -1rem);
-        }
-      }
 
       &.alipay {
         background: #00a0e8 url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20448%20512%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M377.7%2032H70.3C31.4%2032%200%2063.4%200%20102.3v307.5C0%20448.6%2031.4%20480%2070.3%20480h307.5c38.5%200%2069.8-31.1%2070.3-69.6-46-25.6-110.6-60.3-171.6-88.4-32.1%2044-84.1%2081-148.6%2081-70.6%200-93.7-45.3-97-76.4-4-39%2014.9-81.5%2099.5-81.5%2035.4%200%2079.4%2010.3%20127.1%2025%2016.5-30.1%2026.5-60.3%2026.5-60.3h-178.2v-16.7h92.1v-31.2H88.3v-19h109.4V92.3h50.9v50.4h109.4v19H248.6v31.2h88.8s-15.2%2046.6-38.4%2090.9c48.9%2016.7%20100%2036%20148.6%2052.7V102.3C447.8%2063.6%20416.4%2032%20377.7%2032zM47.3%20323c1%2020.2%2010.3%2053.7%2069.9%2053.7%2052.1%200%2092.6-39.7%20117.9-72.9-44.6-18.7-84.5-31.4-109.4-31.4-67.5%200-79.4%2033.1-78.4%2050.6z%22%2F%3E%3C%2Fsvg%3E') no-repeat;
