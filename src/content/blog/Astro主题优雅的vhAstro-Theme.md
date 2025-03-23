@@ -195,6 +195,10 @@ export default {
 }
 ```
 
+## ✅ Lighthouse
+
+![vhAstro-Theme-Lighthouse](https://uxiaohan.github.io/v2/2025/03/1742543844078.svg)
+
 ## 🌈 项目结构
 
 ```t

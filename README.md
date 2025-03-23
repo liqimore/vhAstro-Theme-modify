@@ -23,7 +23,7 @@
 - [x] 图片懒加载
 - [x] 图片灯箱
 - [x] LivePhoto
-- [x] LaTex数学公式
+- [x] LaTex 数学公式
 - [x] 赞赏功能
 - [x] Twikoo 评论
 - [x] 本地搜索
@@ -189,6 +189,10 @@ comment: false # 关闭页面评论（默认开启）
 ---
 ```
 
+## ✅ Lighthouse
+
+![vhAstro-Theme-Lighthouse](https://uxiaohan.github.io/v2/2025/03/1742543844078.svg)
+
 ## 🌈 项目结构
 
 ```t
@@ -227,7 +231,6 @@ comment: false # 关闭页面评论（默认开启）
 ├── package.json        => 依赖管理
 └── pnpm-lock.yaml      => 依赖锁定文件
 ```
-
 
 ## ✨ 反馈和建议
 

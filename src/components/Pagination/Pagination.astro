@@ -23,7 +23,7 @@ import "./Pagination.less";
 	}
 	<!-- 总页的前一页 -->
 	{
-		(!data.next || !data.last) && data.prev && (
+		(!data.next || !data.last) && data.prev && data.current !== "/2" && (
 			<a class={`vh-pagination-item`} href={data.prev}>
 				{fmtPage(data.prev)}
 			</a>
@@ -33,8 +33,8 @@ import "./Pagination.less";
 	<a class="vh-pagination-item active" href="javascript:;">{fmtPage(data.current) || "1"}</a>
 	<!-- 第一页的后一页 -->
 	{
-		(!data.prev || !data.first) && data.next && (
-			<a class={`vh-pagination-item`} href={data.next}>
+		(!data.prev || !data.first) && data.next && data.last !== "/2" && (
+			<a class="vh-pagination-item" href={data.next}>
 				{fmtPage(data.next)}
 			</a>
 		)
